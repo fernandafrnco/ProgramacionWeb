@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <title>Document</title> 
+        <style>
+            .cajaInline 
+            {
+                display: inline; 
+                border: 3px solid rgb(201, 87, 0);
+                padding: 12px; /* Espacio interno */
+                margin: 10px; /* Espacio externo */
+            }
+            .cajaBlock 
+            { 
+                display: block; 
+                border: 3px solid rgb(255, 0, 132);
+                padding: 12px; /* Espacio interno */
+                margin: 27px;/* Espacio externo, arriba y abajo */
+            }
+        </style> 
+    </head> 
+    <body> 
+        <div class="cajaInline">Contenido</div> 
+        <div class="cajaBlock">Contenido</div> 
+        <div class="cajaInline">Contenido</div> 
+        <div class="cajaInline">Contenido</div> 
+        <div class="cajaInline">Contenido</div> 
+    </body> 
+</html>
