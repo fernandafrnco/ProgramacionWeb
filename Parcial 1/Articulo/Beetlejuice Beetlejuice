@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beetlejuice Beetlejuice: First look</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: linear-gradient(135deg, #ff7e5f, #feb47b);
+            font-family: 'Quicksand', sans-serif;
+            line-height: 1.7em;
+            color: #333;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        #contenedor {
+            width: 85%;
+            max-width: 850px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            color: #2c3e50;
+            text-align: center;
+        }
+
+        h3 {
+            margin-bottom: 15px;
+            color: #4d5c6c;
+            text-align: center;
+        }
+
+        p {
+            margin-bottom: 15px;
+            line-height: 1.6;
+            text-align: justify;
+        }
+
+        .image-center {
+            display: block;
+            margin: 15px auto;
+            width: 300px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(66, 45, 45, 0.6);
+        }
+
+        .image-left {
+            float: left;
+            margin: 0 15px 15px 0;
+            width: 300px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(66, 45, 45, 0.6);
+        }
+
+        .image-right {
+            float: right;
+            margin: 0 0 15px 15px;
+            width: 300px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(66, 45, 45, 0.6);
+        }
+    </style>
+</head>
+<body>
+    <div id="contenedor">
+        <h1>Beetlejuice Beetlejuice</h1>
+        <h3>Juice is loose as Beetlejuice sequel is box office hit</h3>
+        
+        <img class="image-center" src="https://static.cinepolis.com/resources/mx/movies/posters/414x603/47141-607088-20240904070840.jpg" alt="Poster de película">
+        <p>Beetlejuice Beetlejuice has had a stellar opening weekend as it earned an impressive $110m (£83m) in the US box office.
+                The film, which is the highly anticipated sequel to Tim Burton's 1988 Beetlejuice, is the second biggest September opening ever after 2017's IT.</p>
+        
+        <p class="clearfix">The supernatural comedy is also the third biggest debut of 2024, behind Inside Out 2 ($154.2 million) and Deadpool & Wolverine ($211.4 million).
+                Michael Keaton has reprised his role as the titular chaos-causing ghoul in the sequel.
+                Catherine O'Hara and Winona Ryder also returned to the franchise and were joined by other actors including Wednesday star Jenna Ortega and Oscar-nominated actor Willem Dafoe.</p>
+        
+        <img class="image-right" src="https://ew.com/thmb/_i_SoOfvI1p84IDCSRm9NlIx5Cc=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/beetlejuice2-first-look-032024-b7727926a9694295840576c0dd8d6e2c.jpg" alt="Primer vistazo a Beetlejuice 2">
+        <p>The film sees Lydia Deetz on a mission to save her rebellious daughter Astrid after she accidentally finds herself in the Afterlife.
+                The film has received mixed reviews from critics.
+                The New York Times described the cult classic reboot as "a fun but less edgy sequel", adding that Burton has "played it safe, going lightly meta while replaying their greatest hits with knowing winks".</p>
+        
+        <p class="clearfix">Burton, who has also directed Edward Scissorhands, Charlie and the Chocolate Factory and Alice in Wonderland, said the fantastical venture into the afterlife was a project "from my heart".</p>
+        
+        <img class="image-left" src="https://ew.com/thmb/U_WYni1SY8HDfTvkhzExdTw8DZ8=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/michael-keaton-beetlejuice2-first-look-tout-032024-860888e86e24485d9e17e0da01993e9b.jpg" alt="Michael Keaton en Beetlejuice 2">
+        <p>The Guardian wrote that the sequel was "a pivotal picture for the director".
+                "It was a calling card; the moment at which he was fully able to indulge his macabre, goth-boy, grand guignol vision."
+                In the three-star-review, Wendy Ide added that the movie "was never going to match the instant cult appeal of the original, but it has a lot of fun trying".</p>
+        <p>Burton does confirm he'll be using stop-motion animation to bring a lot of the classic Beetlejuice effects to the screen. "It needed a back-to-basics, handmade quality," he says. "It reenergized why I love making movies."
+                And what about that title? Beetlejuice Beetlejuice. "It's been, what? Thirty-five years. So it didn't feel like Beetlejuice 2 to me," Burton says. "It didn't feel like that kind of a movie. The other one I thought of, because one of my favorite Dracula movies is Dracula A.D. 1972, was Beetlejuice 2024 A.D. But this was a nice simple one."</p>
+        <p>Just don't say the name one more time, or you risk summoning the man himself.</p>
+    </div>
+</body>
+</html>
