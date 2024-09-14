@@ -1,0 +1,20 @@
+# Unidades de medida en CSS
+
+En CSS, existen diversas unidades de medida que se utilizan para definir tamaños, márgenes, rellenos, y otros aspectos relacionados con la disposición visual de los elementos. A continuación, se muestra una tabla con algunas de las unidades más comunes.
+
+| Unidad  | Descripción                                                                                         |
+|---------|-----------------------------------------------------------------------------------------------------|
+| `px`    | **Píxeles** - Unidad relativa al tamaño de los píxeles en la pantalla.                              |
+| `%`     | **Porcentaje** - Se calcula en base al tamaño del elemento padre o contenedor.                      |
+| `em`    | **Em** - Relativa al tamaño de la fuente del elemento padre (generalmente la fuente actual).        |
+| `rem`   | **Root Em** - Relativa al tamaño de la fuente raíz (normalmente definida en el elemento `html`).    |
+| `vw`    | **Viewport Width** - 1 `vw` es el 1% del ancho total del viewport (ventana del navegador).          |
+| `vh`    | **Viewport Height** - 1 `vh` es el 1% de la altura total del viewport.                              |
+| `vmin`  | **Viewport Min** - Relativa al valor menor entre `vw` y `vh`.                                       |
+| `vmax`  | **Viewport Max** - Relativa al valor mayor entre `vw` y `vh`.                                       |
+| `cm`    | **Centímetros** - Unidad física equivalente a 1 centímetro.                                         |
+| `mm`    | **Milímetros** - Unidad física equivalente a 1 milímetro.                                           |
+| `in`    | **Pulgadas** - Unidad física equivalente a 1 pulgada (1 pulgada = 2.54 cm).                         |
+| `pt`    | **Puntos** - Unidad tipográfica equivalente a 1/72 de una pulgada.                                  |
+| `pc`    | **Picas** - Unidad tipográfica equivalente a 12 puntos.                                             |
+| `fr`    | **Fracción** - Usada en `grid-layout`, asigna una fracción del espacio disponible en el contenedor. |
