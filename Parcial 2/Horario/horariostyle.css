@@ -1,0 +1,41 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+table{
+    width:100%;
+    font-family: Quicksand;
+}
+table td{
+    text-align: center;
+}
+table,td{
+    border: 2px solid rgb(255, 129, 150);
+    border-collapse: collapse;
+}
+thead > tr:nth-child(1){
+    background-color: rgb(233, 150, 183);
+    
+}
+tbody > tr:nth-child(even){
+    background-color: pink;
+}
+tbody > tr:hover{
+    background-color: rgb(151, 106, 115);
+    color:ghostwhite;
+}
+tbody > tr td:active{
+    background-color: rgb(203, 87, 116);
+    color:ghostwhite;
+}
+@media screen and (max-width:500px){
+    table, tbody, thead, tr, td{
+        display: block;
+    }
+    tbody tr > td:first-child{
+        background-color: rgb(199, 7, 90);
+        color:rgb(255, 193, 203);
+        text-align: center;
+    }
+}
