@@ -2,62 +2,30 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horario</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
-    <style>
-        *{
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-        table{
-            width:100%;
-            font-family: Quicksand;
-        }
-        table,td{
-            border: 2px solid rgb(255, 129, 150);
-            border-collapse: collapse;
-        }
-        tbody > tr:nth-child(even){
-            background-color: pink;
-        }
-        tbody > tr:hover{
-            background-color: rgb(151, 106, 115);
-            color:ghostwhite;
-        }
-        tbody > tr td:active{
-            background-color: rgb(203, 87, 116);
-            color:ghostwhite;
-        }
-        @media screen and (max-width:500px){
-            table, tbody, thead, tr, td{
-                display: block;
-            }
-            tbody tr > td:first-child{
-                background-color: rgb(178, 0, 77);
-                color:rgb(255, 193, 203);
-                text-align: center;
-            }
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./horariostyle.css">
 </head>
 <body>
-    <table>
-        <thead>
-            <tr>
-                <td>Materia</td> <td>Lunes</td> <td>Martes</td> <td>Miercoles</td> <td>Jueves</td> <td>Viernes</td>
-            </tr>
-        </thead>
-        <tbody>
-            <tr> <td>Web</td> <td>7-8</td> <td>7-8</td> <td>7-8</td> <td>7-8</td> <td>7-8</td> </tr>
-            <tr> <td>FIS</td> <td>7-8</td> <td>7-8</td> <td>7-8</td> <td>7-8</td> <td>7-8</td> </tr>
-            <tr> <td>Bases de Datos</td> <td>7-8</td> <td>7-8</td> <td>7-8</td> <td>7-8</td> <td>7-8</td> </tr>
-            <tr> <td>PW</td> <td>7-8</td> <td>7-8</td> <td>7-8</td> <td>7-8</td> <td>7-8</td> </tr>
-            <tr> <td>PW</td> <td>7-8</td> <td>7-8</td> <td>7-8</td> <td>7-8</td> <td>7-8</td> </tr>
-        </tbody>
-    </table>
+    <div class="container">
+        <h1>Horario de Clases</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Materia</th> <th>Lunes</th> <th>Martes</th> <th>Miércoles</th> <th>Jueves</th> <th>Viernes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr> <td>Web</td> <td>7 - 8</td> <td>7 - 8</td> <td>7 - 8</td> <td>7 - 8</td> <td>7 - 8</td> </tr>
+                <tr> <td>Fund. Ing. Software </td> <td> </td> <td>8-10</td> <td> </td> <td>8-10</td> <td> </td> </tr>
+                <tr> <td>Fund. Base de Datos</td> <td>11-12</td> <td>11-12</td> <td>11-12</td> <td>11-12</td> <td>11-12</td> </tr>
+                <tr> <td>Sistemas Operativos</td> <td>12-14</td> <td>10-11</td> <td> </td> <td>10-11</td> <td> </td> </tr>
+                <tr> <td>Ecuaciones Diferenciales</td> <td>14-15</td> <td>14-15</td> <td>14-15</td> <td>14-15</td> <td>14-15</td> </tr>
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>
