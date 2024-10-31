@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Relajación con Gatos - Halloween</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background: url('https://wallpapers-clan.com/wp-content/uploads/2024/06/halloween-cats-witches-skulls-spooky-desktop-wallpaper-preview.jpg') no-repeat center center; 
+            background-size: cover; 
+            display: flex;
+            align-items: center; 
+            justify-content: center; 
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+            color: #9a0675; 
+            position: relative; 
+        }
+        h1 {
+            font-size: 36px;
+            text-shadow: 2px 2px 5px rgba(53, 53, 53, 0.7); 
+            margin-bottom: 20px; 
+        }
+        img {
+            max-width: 500px; 
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+        .buttons-container {
+            display: flex;
+            justify-content: center; 
+            margin-top: auto; 
+            margin-bottom: 20px; 
+        }
+        .cat-button {
+            width: 100px; 
+            height: 100px; 
+            border: none;
+            cursor: pointer;
+            margin: 0 15px; 
+            transition: transform 0.3s;
+        }
+        .cat-button:hover {
+            transform: scale(1.1);
+        }
+        #btnXHR {
+            background: url('https://static.vecteezy.com/system/resources/previews/009/267/680/non_2x/cat-paw-element-free-png.png') no-repeat center center; 
+            background-size: contain;
+        }
+        #btnFetch {
+            background: url('https://static.vecteezy.com/system/resources/previews/009/267/071/non_2x/cat-paw-element-free-png.png') no-repeat center center; 
+            background-size: contain;
+        }
+        #btnFetchAsync {
+            background: url('https://static.vecteezy.com/system/resources/previews/009/267/579/non_2x/cat-paw-element-free-png.png') no-repeat center center; 
+            background-size: contain;
+        }
+        #res {
+            font-size: 21px;
+            color: #333;
+            margin: 20px 0; 
+            max-width: 500px; 
+            overflow-wrap: break-word; 
+        }
+        .button-label {
+            font-size: 18px; 
+            color: #555; 
+            margin-top: 5px; 
+            text-align: center; 
+        }
+        .content {
+            z-index: 1; 
+            position: relative; 
+            padding: 30px; 
+            background: rgba(255, 255, 255, 0.9); 
+            border-radius: 10px; 
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); 
+            max-width: 800px; 
+            width: 90%; 
+            height: 700px; 
+            display: flex;
+            flex-direction: column; 
+            align-items: center; 
+            justify-content: space-between; 
+        }
+    </style>
+</head>
+<body>
+    <div class="content"> 
+        <h1>¡Relájate con gatos en Halloween!</h1>
+        <div>
+            <img src="https://64.media.tumblr.com/3802f912ba79acf3652c6bdad20323a7/8b60592494eb63c1-30/s540x810/cc42e59b18c33290b3809b1651c863724d3b4b95.gifv" alt="Gato">
+        </div>
+        <div id="res">¡Haz clic en las patitas para obtener un dato divertido sobre gatos!</div>
+        <div class="buttons-container"> 
+            <div>
+                <button id="btnXHR" class="cat-button"></button>
+                <span class="button-label"><b>XHR</b></span>
+            </div>
+            <div>
+                <button id="btnFetch" class="cat-button"></button>
+                <span class="button-label"><b>Fetch</b></span>
+            </div>
+            <div>
+                <button id="btnFetchAsync" class="cat-button"></button>
+                <span class="button-label"><b>FetchAsync</b></span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('btnXHR').addEventListener('click', () => {
+            let solicitud = new XMLHttpRequest();
+            solicitud.onload = function () {
+                let objetoJason = JSON.parse(solicitud.response);
+                document.getElementById('res').innerText = objetoJason.fact;
+            }
+            solicitud.open("GET", 'https://catfact.ninja/fact?max_length=140', true);
+            solicitud.send();
+        });
+
+        document.getElementById('btnFetch').addEventListener('click', () => {
+            fetch('https://catfact.ninja/fact?max_length=140')
+                .then(resultado => resultado.json())
+                .then(dato => document.getElementById('res').innerText = dato.fact);
+        });
+
+        document.getElementById('btnFetchAsync').addEventListener('click', async () => {
+            let resultado = await fetch('https://catfact.ninja/fact?max_length=140');
+            let dato = await resultado.json();
+            document.getElementById('res').innerText = dato.fact;
+        });
+    </script>
+</body>
+</html>
