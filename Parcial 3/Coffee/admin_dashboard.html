@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel Administrativo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Panel Administrativo</h1>
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="menu.html">Menú</a>
+            <a href="pedido.html">Pedidos</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="menu-section">
+            <h2>Gestión del Menú</h2>
+            <table id="menu-table">
+                <thead>
+                    <tr>
+                        <th>ID Producto</th>
+                        <th>Nombre</th>
+                        <th>Descripción</th>
+                        <th>Precio</th>
+                        <th>Categoría</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Contenido generado dinámicamente -->
+                </tbody>
+            </table>
+            <button id="add-menu-item">Agregar Producto</button>
+        </section>
+        
+        <!-- Modal de Edición de Producto (oculto por defecto) -->
+        <div id="edit-modal" style="display:none;">
+            <h3>Editar Producto</h3>
+            <form id="edit-form">
+                <input type="hidden" id="edit-id">
+                <label for="edit-name">Nombre:</label>
+                <input type="text" id="edit-name" required><br>
+                <label for="edit-description">Descripción:</label>
+                <input type="text" id="edit-description" required><br>
+                <label for="edit-price">Precio:</label>
+                <input type="number" id="edit-price" required><br>
+                <button type="submit">Guardar Cambios</button>
+                <button type="button" id="close-edit-modal">Cancelar</button>
+            </form>
+        </div>
+
+        <section id="pedidos-section">
+            <h2>Gestión de Pedidos</h2>
+            <table id="pedidos-table">
+                <thead>
+                    <tr>
+                        <th>ID Pedido</th>
+                        <th>Cliente</th>
+                        <th>Domicilio</th>
+                        <th>Fecha</th>
+                        <th>Total</th>
+                        <th>Estado</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Contenido generado dinámicamente -->
+                </tbody>
+            </table>
+        </section>
+
+        <div id="edit-modal" style="display:none;">
+            <h3>Editar pedido</h3>
+            <form id="edit-form">
+                <input type="hidden" id="edit-id">
+                <label for="edit-cliente">cliente:</label>
+                <input type="text" id="edit-cliente" required><br>
+                <label for="edit-domicilio">Domicilio:</label>
+                <input type="text" id="edit-domicilio" required><br>
+                <label for="edit-fecha">Fecha:</label>
+                <input type="date" id="edit-fecha" required><br>
+                <label for="edit-total">Total:</label>
+                <input type="number" id="edit-total" required><br>
+                <label for="edit-estado">Estado:</label>
+                <input type="text" id="edit-estado" required><br>
+                <button type="submit">Guardar Cambios</button>
+                <button type="button" id="close-edit-modal">Cancelar</button>
+            </form>
+        </div>
+    </main>
+
+    <script src="admin_dashboard.js"></script>
+</body>
+</html>

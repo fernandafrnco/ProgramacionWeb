@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Realizar Pedido</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+</head>
+<body>
+    <header>
+        <h1>CosyBunnyCoffee</h1>
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="menu.html">Menú</a>
+            <a href="pedido.html">Ordenar</a>
+            <a href="administrativo.html">¿Eres trabajador?</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Realiza tu Pedido</h2>
+       
+        <form id="pedidoForm">
+            <label for="nombre_cliente">Nombre Completo:</label>
+            <input type="text" id="nombre_cliente" name="nombre_cliente" placeholder="Ingresa tu nombre" required>
+
+            <label for="domicilio">Domicilio:</label>
+            <input type="text" id="domicilio" name="domicilio" placeholder="Ingresa tu dirección" required>
+
+            <label for="productos">Selecciona los productos:</label>
+            <div id="listado-menu">
+                <!-- Lista de productos será generada dinámicamente con botones de incremento y decremento -->
+            </div>
+            <p><strong>Total: $<span id="totalCompra">0.00</span></strong></p>
+            <div>
+                <button type="button" id="efectivoBtn">Pago en Efectivo</button>
+                <button type="button" id="tarjetaBtn">Pago con Tarjeta</button>
+            </div>
+
+            <div id="errores" style="color: red; margin-top: 10px;"></div>           
+
+            <button type="submit" id="realizarCompraBtn">Realizar Compra</button>
+        </form>
+
+        <div id="resumenCompra" class="resumen-compra" style="display:none;">
+            <h3>Resumen de la Compra</h3>
+            <p><strong>ID Pedido:</strong> <span id="pedidoId"></span></p>
+            <p><strong>Fecha:</strong> <span id="fechaPedido"></span></p>
+            <p><strong>Nombre del Cliente:</strong> <span id="nombreCliente"></span></p>
+            <p><strong>Domicilio:</strong> <span id="domicilioCliente"></span></p>
+            
+
+            <p><strong>Total: $<span id="totalCompra2">0.00</span></strong></p>
+            <button id="descargarComprobanteBtn">Descargar Comprobante</button>
+        </div>
+    </main>
+
+    <!-- <footer>
+        <p>&copy; 2024 Cafetería XYZ. Todos los derechos reservados.</p>
+    </footer> -->
+
+    <script src="pedido.js"></script>
+</body>
+</html>

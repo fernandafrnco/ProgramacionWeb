@@ -1,0 +1,317 @@
+/* Estilos globales */
+*{
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    line-height: 1.6;
+    background-color: #FEFEFE;
+    color: #333;
+}
+
+/* Encabezado */
+header {
+    background-color: #FEFEFE;
+    color: rgba(84, 37, 8, 0.956);
+    padding: 10px 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+header nav {
+    margin-top: 10px;
+}
+
+header nav a {
+    color: rgba(84, 37, 8, 0.6);
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+}
+
+header nav a:hover {
+    text-decoration: underline;
+}
+
+/* Contenedor principal */
+main{
+    padding: 20px;
+    width: 800px;
+    margin: 20px auto;
+    background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+.section {
+    padding: 20px;
+    max-width: 800px;
+    margin: 20px auto;
+    background: #0d3b66;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    color: #f0f0f0;
+    text-align: center;
+    padding: 2rem;
+}
+.section img {
+    max-width: 325px;
+}
+
+.section1 {
+    padding: 20px;
+    max-width: 800px;
+    margin: 20px auto;
+    background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: #faf0ca;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+    color: #333;
+}
+
+.section1 img {
+    max-width: 300px;
+    margin: 1rem;
+}
+
+.section2 {
+    padding: 20px;
+    max-width: 800px;
+    margin: 20px auto;
+    background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: #f4d35e;
+    text-align: center;
+    color: #333;
+    padding: 2rem;
+}
+
+.section2 img {
+    max-width: 150px;
+}
+
+.section3 {
+    padding: 20px;
+    max-width: 800px;
+    margin: 20px auto;
+    background: #ee964b;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+    color: #333;
+}
+
+.section3 img {
+    max-width: 300px;
+    margin: 1rem;
+    order: 2;
+}
+
+.section3 div {
+    flex: 1; /* Texto toma el espacio restante */
+}
+
+.section4 {
+    padding: 20px;
+    max-width: 800px;
+    margin: 20px auto;
+    background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: #772e25;
+    text-align: center;
+    color: #f0f0f0;
+    padding: 2rem;
+}
+
+.section4 img {
+    max-width: 200px;
+}
+
+/* Estilo para el grid de productos */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Ajustable al tamaño de pantalla */
+    gap: 20px; /* Espaciado entre elementos */
+    padding: 20px;
+    margin: 0 auto;
+}
+
+/* Estilo individual para cada producto */
+.product {
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s;
+}
+
+.product:hover {
+    transform: scale(1.05);
+}
+
+.product img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.product h3 {
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+.product p {
+    color: #666;
+    margin: 10px 0;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    background-color: #d5d5d5;
+    color: rgb(56, 56, 56);
+    padding: 1px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Formulario */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+
+form input, form button {
+    padding: 10px;
+    font-size: 1em;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form button {
+    background-color: #c65353;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+form button:hover {
+    background-color: #c65353;
+}
+
+/* Estilos para tablas (administrativo) */
+table {
+    font-family: "Poppins", sans-serif;
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 1em;
+    text-align: left;
+}
+
+table th, table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+}
+
+table th {
+    background-color: #c65353;
+    color: white;
+}
+
+/* Responsividad */
+/*@media (max-width: 768px) {
+    header nav a {
+        display: block;
+        margin: 10px 0;
+    }
+
+    main {
+        width: 90%;
+    }
+}*/
+
+/* Responsividad general */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    header nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    header nav a {
+        font-size: 1em;
+    }
+
+    main {
+        width: 90%;
+        padding: 10px;
+    }
+
+    .section1, .section2, .section3, .section4 {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .section img, .section1 img, .section2 img, .section3 img, .section4 img{
+        max-width: 80%;
+        margin-bottom: 15px;
+    }
+}
+
+/* Responsividad para dispositivos muy pequeños */
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.2em;
+    }
+
+    header nav a {
+        font-size: 0.9em;
+    }
+
+    .section {
+        padding: 10px;
+    }
+
+    .section img, .section1 img, .section2 img, .section3 img, .section4 img {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    footer {
+        font-size: 0.8em;
+    }
+}
