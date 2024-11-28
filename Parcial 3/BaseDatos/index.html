@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Consulta</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/gridjs/dist/theme/mermaid.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/gridjs/dist/gridjs.umd.js"></script>
+</head>
+<body>
+    <h1>Grid.js</h1>
+    <form id="formulario" enctype="multipart/form-data">
+        <label for="Nombre">Nombre:</label>
+        <input type="text" id="Nombre" name="Nombre" required>
+    
+        <label for="Apellido">Apellido:</label>
+        <input type="text" id="Apellido" name="Apellido" required>
+    
+        <label for="Archivo">Subir Archivo (JPG, JPEG, PNG):</label>
+        <input type="file" id="archivos" name="archivos" accept="image/jpeg, image/png" required>
+    
+        <button id="btnenv" type="button">Enviar</button>
+        <button id="btnMostrarDB" type="button">Mostrar Base de Datos</button>
+    </form>
+  
+    <div class="result" id="resultado"></div>
+    <div id="grid-container"></div>
+
+    <script>
+        // Función de enviar formulario
+        document.getElementById('btnenv').addEventListener('click', async function (event) {
+            event.preventDefault(); // Evita cualquier comportamiento predeterminado del botón
+            const resultadoDiv = document.getElementById('resultado');
+            resultadoDiv.innerHTML = ''; // Limpia mensajes previos
+
+            // Crear el FormData
+            const formData = new FormData(document.getElementById('formulario'));
+
+            try {
+                const response = await fetch('http://localhost:3000/FormData', {
+                    method: 'POST',
+                    body: formData,
+                });
+
+                if (!response.ok) {
+                    const errorData = await response.json();
+                    if (errorData.errors) {
+                        // Mostrar los errores de validación
+                        errorData.errors.forEach(err => {
+                            showError(err.param, err.msg);
+                        });
+                        return;
+                    }
+
+                    if (errorData.message) {
+                        showPersistentMessage('error', `
+                            ${errorData.message}<br>
+                            <a href="http://localhost:3000${errorData.pdfUrl}" target="_blank">Descargar PDF existente</a>
+                        `);
+                        return;
+                    }
+
+                    throw new Error(errorData.error || 'Error desconocido');
+                }
+
+                const result = await response.json();
+                showPersistentMessage('success', `
+                    ${result.message}<br>
+                    <a href="http://localhost:3000${result.pdfUrl}" target="_blank">Descargar PDF</a>
+                `);
+            } catch (error) {
+                showPersistentMessage('error', 'Ocurrió un error: ' + error.message);
+            }
+        });
+
+        // Función para mostrar base de datos
+        document.getElementById('btnMostrarDB').addEventListener('click', async function () {
+            const gridContainer = document.getElementById('grid-container');
+            gridContainer.innerHTML = '<p>Cargando datos...</p>';
+
+            try {
+                const response = await fetch('http://localhost:3000/api/formulario');
+                if (!response.ok) {
+                    throw new Error('No se pudo obtener los datos de la base de datos');
+                }
+
+                const data = await response.json();
+                console.log('Datos recibidos:', data); // Verifica si los datos llegan correctamente
+
+                if (data.length === 0) {
+                    gridContainer.innerHTML = '<p>No hay datos disponibles.</p>';
+                    return;
+                }
+                gridContainer.innerHTML = ''; // Limpia el contenedor antes de mostrar el grid
+
+                // Crear el grid
+                const grid = new gridjs.Grid({
+                    columns: ["ID", "Nombre", "Apellido", "Archivo", "PDF"],
+                    data: data.map(item => [
+                        item.id, 
+                        item.nombre, 
+                        item.apellido, 
+                        item.pdf_path ? `<a href="http://localhost:3000${item.pdf_path}" "` : "No Disponible",
+                        item.pdf_path ? `"http://localhost:3000${item.pdf_path}" ` : "No Disponible",
+                    ]),
+                    search: true,
+                    pagination: {
+                        enabled: true, 
+                        limit: 5,
+                    },
+                    sort: true,
+                    language: {
+                        'pagination': {
+                            'previous': 'Anterior',
+                            'next': 'Siguiente',
+                        }
+                    },
+                });
+
+                grid.render(gridContainer); // Renderiza el grid
+
+            } catch (error) {
+                console.error('Error al cargar los datos:', error);
+                gridContainer.innerHTML = `<p style="color: red;">Error al cargar los datos: ${error.message}</p>`;
+            }
+        });
+
+        // Mostrar mensajes de error persistentes
+        function showPersistentMessage(type, message) {
+            const resultadoDiv = document.getElementById('resultado');
+            resultadoDiv.innerHTML = ''; // Limpia mensajes previos
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `${type}-message`;
+            messageDiv.style.cssText = `
+                border: 1px solid;
+                padding: 10px;
+                margin-top: 10px;
+                border-radius: 5px;
+                background-color: ${{success: '#d4edda', error: '#f8d7da'}[type]};
+                color: ${type === 'success' ? '#155724' : '#721c24'};
+            `;
+            messageDiv.innerHTML = `${message}`;
+            resultadoDiv.appendChild(messageDiv);
+        }
+    </script>
+
+</body>
+</html>
